@@ -1,11 +1,11 @@
-import { type ReactNode } from "react";
+import { type FC, type ReactNode } from "react";
 
 interface CourseGoalProps {
   title: string;
   children: ReactNode;
 }
 
-const CourseGoal = ({ title, children }: CourseGoalProps) => {
+const CourseGoal: FC<CourseGoalProps> = ({ title, children }) => {
   return (
     <article>
       <div>
