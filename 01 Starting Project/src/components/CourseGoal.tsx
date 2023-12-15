@@ -1,9 +1,14 @@
-const CourseGoal = () => {
+const CourseGoal = ({title, description}:{title:string; description:string;}) => {
   return (
-    <div>
-      
-    </div>
+    <article>
+      <div>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <button>Delete</button>
+    </article>
   )
 }
 
 export default CourseGoal
+
