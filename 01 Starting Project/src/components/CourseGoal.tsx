@@ -1,4 +1,9 @@
-const CourseGoal = ({title, description}:{title:string; description:string;}) => {
+interface CourseGoalProps {
+  title: string;
+  description: string;
+}
+
+const CourseGoal = ({ title, description }: CourseGoalProps) => {
   return (
     <article>
       <div>
@@ -7,8 +12,7 @@ const CourseGoal = ({title, description}:{title:string; description:string;}) =>
       </div>
       <button>Delete</button>
     </article>
-  )
-}
+  );
+};
 
-export default CourseGoal
-
+export default CourseGoal;
