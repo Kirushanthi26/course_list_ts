@@ -13,12 +13,12 @@ export interface CourseGoals {
 export default function App() {
   const [goals, setGoals] = useState<CourseGoals[]>([]);
 
-  const addGoalHandler = () => {
+  const addGoalHandler = (goal:string, summary:string) => {
     setGoals((prevState) => {
       const newCourseGoal: CourseGoals = {
         id: Math.random(),
-        title: "learn React js",
-        description: "learn React js with ts, as soon as possible",
+        title: goal,
+        description: summary
       };
       return [...prevState, newCourseGoal];
     });
@@ -33,7 +33,7 @@ export default function App() {
       <Header image={{ src: goalsImg, alt: "header goal img" }}>
         <h1>Your Course Goals</h1>
       </Header>
-      <NewGoal/>
+      <NewGoal onAddGoal={addGoalHandler}/>
       <CourseGoalsList goalProps={goals} onDeleteGoal={deleteGoalHandler}/>
     </main>
   );
